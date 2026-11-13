@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Exo+2:wght@400;700&family=Bebas+Neue&family=Barlow:wght@400;700&family=Comfortaa:wght@400;700&family=Nunito:wght@400;700&family=Audiowide&family=Rajdhani:wght@500;700&family=Fredoka:wght@400;600&display=swap"); /* fontes dos temas novos */
+ 
+/* ============================================================
+   1. TEMAS — cada bloco só define variáveis.
+   Para criar o seu: copie um bloco, troque o id e os valores,
+   e crie um botão no index.html com esse mesmo id.
+   ============================================================ */
+ 
+/* Nebulosa (roxo e preto) */
+:root,
+body:has(#nebulosa:checked) {
+  --fundo: #07020f;
+  --superficie: #170a2c;
+  --texto: #f1e8ff;
+  --texto-suave: #b79be0;
+  --destaque: #a855f7;
+  --destaque-texto: #0a0414;
+  --borda: #4c1d95;
+  --raio: 20px;
+  --borda-larg: 1px;
+  --sombra: 0 0 28px rgba(168, 85, 247, .4);
+  --fonte-titulo: "Orbitron", sans-serif;
+  --fonte-texto: "Exo 2", sans-serif;
+  --caixa-titulo: uppercase;
+}
+ 
+/* Vulcão */
+body:has(#vulcao:checked) {
+  --fundo: #1c0b08;
+  --superficie: #2e1410;
+  --texto: #ffe9d6;
+  --texto-suave: #d9a58a;
+  --destaque: #ff5a1f;
+  --destaque-texto: #1c0b08;
+  --borda: #7a2a12;
+  --raio: 6px;
+  --borda-larg: 2px;
+  --sombra: 0 0 24px rgba(255, 90, 31, .35);
+  --fonte-titulo: "Bebas Neue", sans-serif;
+  --fonte-texto: "Barlow", sans-serif;
+  --caixa-titulo: uppercase;
+}
+ 
+/* Gelo */
+body:has(#gelo:checked) {
+  --fundo: #effafa;
+  --superficie: #ffffff;
+  --texto: #10373d;
+  --texto-suave: #4c7d84;
+  --destaque: #22b0c4;
+  --destaque-texto: #06282d;
+  --borda: #c3ecef;
+  --raio: 24px;
+  --borda-larg: 1px;
+  --sombra: 0 8px 24px rgba(34, 176, 196, .2);
+  --fonte-titulo: "Comfortaa", sans-serif;
+  --fonte-texto: "Nunito", sans-serif;
+  --caixa-titulo: none;
+}
+ 
+/* Neon */
+body:has(#neon:checked) {
+  --fundo: #050805;
+  --superficie: #0d150d;
+  --texto: #e6ffe0;
+  --texto-suave: #8fd98a;
+  --destaque: #39ff14;
+  --destaque-texto: #031003;
+  --borda: #1f6b12;
+  --raio: 4px;
+  --borda-larg: 2px;
+  --sombra: 0 0 22px rgba(57, 255, 20, .45);
+  --fonte-titulo: "Audiowide", sans-serif;
+  --fonte-texto: "Rajdhani", sans-serif;
+  --caixa-titulo: none;
+}
+ 
+/* Pôr do sol */
+body:has(#pordosol:checked) {
+  --fundo: #ffe8d6;
+  --superficie: #fffaf4;
+  --texto: #4a1942;
+  --texto-suave: #8a4a6f;
+  --destaque: #d64550;
+  --destaque-texto: #ffffff;
+  --borda: #ffb085;
+  --raio: 22px;
+  --borda-larg: 3px;
+  --sombra: 6px 6px 0 #ffb085;
+  --fonte-titulo: "Fredoka", sans-serif;
+  --fonte-texto: "Fredoka", sans-serif;
+  --caixa-titulo: none;
+}
+ 
+/* ============================================================
+   2. ESTILO GERAL — só usa as variáveis, nunca cores fixas.
+   ============================================================ */
+ 
+*, *::before, *::after { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  transition: background .3s, color .3s;
+}
+ 
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+ 
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  text-transform: var(--caixa-titulo);
+  line-height: 1.15;
+  margin: 0 0 .6rem;
+}
+h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
+h2 { font-size: 1.6rem; margin-top: 3rem; }
+h3 { font-size: 1.2rem; color: var(--destaque); }
+ 
+header p { font-size: 1.2rem; color: var(--texto-suave); max-width: 38em; }
+ 
+code {
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: calc(var(--raio) / 4);
+  padding: .05em .4em;
+  font-size: .9em;
+}
+ 
+/* Botões de tema */
+.temas {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+  padding: .9rem 1rem;
+  background: var(--fundo);
+  border-bottom: var(--borda-larg) solid var(--borda);
+}
+.temas input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.temas label {
+  cursor: pointer;
+  padding: .45rem 1.1rem;
+  font-family: var(--fonte-titulo);
+  text-transform: var(--caixa-titulo);
+  background: var(--superficie);
+  color: var(--texto);
+  border: var(--borda-larg) solid var(--borda);
+  border-radius: calc(var(--raio) * 2);
+  transition: transform .15s;
+}
+.temas label:hover { transform: translateY(-2px); }
+.temas input:checked + label {
+  background: var(--destaque);
+  color: var(--destaque-texto);
+  box-shadow: var(--sombra);
+}
+.temas input:focus-visible + label {
+  outline: 3px solid var(--destaque);
+  outline-offset: 3px;
+}
+ 
+/* Cartões */
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+article, .tabela, .desafio ol {
+  background: var(--superficie);
+  border: var(--borda-larg) solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+article { padding: 1.2rem 1.3rem; }
+article p { margin: 0; color: var(--texto-suave); }
+ 
+/* Tabela */
+.tabela { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 520px; }
+th, td { padding: .75rem 1rem; text-align: left; }
+th {
+  background: var(--destaque);
+  color: var(--destaque-texto);
+  font-family: var(--fonte-titulo);
+  text-transform: var(--caixa-titulo);
+  font-weight: 700;
+}
+td { border-top: 1px solid var(--borda); }
+td:first-child { font-weight: 700; }
+ 
+/* Desafio */
+.desafio ol {
+  margin: 0;
+  padding: 1.3rem 1.5rem 1.3rem 3rem;
+}
+.desafio li { padding-left: .3rem; }
+.desafio li + li { margin-top: .5rem; }
+.desafio li::marker { color: var(--destaque); font-weight: 700; }
+ 
+footer {
+  margin-top: 3rem;
+  color: var(--texto-suave);
+  font-size: .9rem;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+ 

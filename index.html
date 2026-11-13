@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Um site, cinco temas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Fraunces:wght@400;700&family=Space+Grotesk:wght@400;700&family=Bungee&family=Baloo+2:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Botões de tema: cada rádio tem o mesmo id do tema no CSS -->
+  <nav class="temas" aria-label="Escolha um tema">
+    <input type="radio" name="tema" id="nebulosa" checked><label for="nebulosa">Nebulosa</label>
+    <input type="radio" name="tema" id="vulcao"><label for="vulcao">Vulcão</label>
+    <input type="radio" name="tema" id="gelo"><label for="gelo">Gelo</label>
+    <input type="radio" name="tema" id="neon"><label for="neon">Neon</label>
+    <input type="radio" name="tema" id="pordosol"><label for="pordosol">Pôr do sol</label>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Um site, cinco temas</h1>
+      <p>Esta página nunca muda de conteúdo. Clique nos temas acima e veja cores, fontes, cantos e sombras mudarem só com CSS.</p>
+    </header>
+
+    <section>
+      <h2>O que você vai praticar</h2>
+      <div class="cartoes">
+        <article>
+          <h3>Variáveis CSS</h3>
+          <p>Cada tema é um conjunto de variáveis como <code>--fundo</code> e <code>--destaque</code>. O resto do CSS só usa essas variáveis.</p>
+        </article>
+        <article>
+          <h3>Seletor :has()</h3>
+          <p>Quando um botão de tema está marcado, o <code>body</code> troca as variáveis. Nenhuma linha de JavaScript.</p>
+        </article>
+        <article>
+          <h3>Tipografia</h3>
+          <p>Cada tema tem um par de fontes: uma para títulos e outra para o texto corrido.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>O que muda em cada tema</h2>
+      <div class="tabela">
+        <table>
+          <thead>
+            <tr><th>Tema</th><th>Fonte dos títulos</th><th>Cantos</th><th>Sensação</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nebulosa</td><td>Orbitron</td><td>Redondos</td><td>Roxo e preto, misteriosa</td></tr>
+            <tr><td>Vulcão</td><td>Bebas Neue</td><td>Quase retos, borda firme</td><td>Escura e quente</td></tr>
+            <tr><td>Gelo</td><td>Comfortaa</td><td>Bem redondos</td><td>Fresca e suave</td></tr>
+            <tr><td>Neon</td><td>Audiowide</td><td>Quase retos, borda neon</td><td>Noite verde e elétrica</td></tr>
+            <tr><td>Pôr do sol</td><td>Fredoka</td><td>Muito redondos, borda grossa</td><td>Quente e alegre</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="desafio">
+      <h2>Desafio</h2>
+      <ol>
+        <li>Abra o <code>style.css</code> e copie o bloco de um tema.</li>
+        <li>Crie o seu: troque o nome, as cores e as fontes.</li>
+        <li>Adicione um botão novo no <code>index.html</code> com o mesmo id do seu tema.</li>
+        <li>Publique no GitHub Pages e envie o link.</li>
+      </ol>
+    </section>
+
+    <footer>Atividade de HTML e CSS · feita para publicar no GitHub Pages</footer>
+  </main>
+
+</body>
+</html>
